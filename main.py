@@ -106,3 +106,55 @@ trimite_mesaj(
     email="andrei@email.com",
     mesaj="Salut! Interesant proiectul tau!"
 )
+
+print("\n=== Exemple dummy pentru ceilalti 3 piloni OOP ===")
+
+# 1. Incapsulare
+class ContBancar:
+    def __init__(self, titular, sold):
+        self.titular = titular      # atribut public
+        self.__sold = sold          # atribut privat (encapsulat)
+
+    def afiseaza_sold(self):
+        print(f"Soldul contului pentru {self.titular} este {self.__sold} RON")
+
+cont = ContBancar("Robert", 1000)
+cont.afiseaza_sold()
+
+# 2. Abstractie
+from abc import ABC, abstractmethod
+
+class Vehicul(ABC):
+    @abstractmethod
+    def porneste(self):
+        pass
+
+class Masina(Vehicul):
+    def porneste(self):
+        print("Masina porneste cu cheia")
+
+class Bicicleta(Vehicul):
+    def porneste(self):
+        print("Bicicleta porneste prin pedalat")
+
+masina = Masina()
+bicicleta = Bicicleta()
+masina.porneste()
+bicicleta.porneste()
+
+# 3. Polimorfism
+class Animal:
+    def vorbeste(self):
+        print("Animalul scoate un sunet")
+
+class Caine(Animal):
+    def vorbeste(self):
+        print("Ham Ham!")
+
+class Pisica(Animal):
+    def vorbeste(self):
+        print("Miau Miau!")
+
+animale = [Caine(), Pisica()]
+for animal in animale:
+    animal.vorbeste()
