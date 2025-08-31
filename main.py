@@ -1,7 +1,7 @@
 # main.py
 
 from cv import CV
-from proiecte import Proiect
+from proiecte import Proiect, ProiectDetaliat
 from contact import trimite_mesaj
 
 # === CV ===
@@ -97,6 +97,14 @@ proiect1 = Proiect(
     "https://github.com/robert/portofoliu"
 )
 proiect1.afiseaza_proiect()
+
+proiect2 = ProiectDetaliat(
+    "Aplicatie Web",
+    "Aplicatie Flask pentru portofoliu",
+    "https://github.com/robertdanila/aplicatie_web",
+    "Python + Flask"
+)
+proiect2.afiseaza_proiect()
 
 print("\n---\n")
 
