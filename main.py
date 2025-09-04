@@ -166,3 +166,36 @@ class Pisica(Animal):
 animale = [Caine(), Pisica()]
 for animal in animale:
     animal.vorbeste()
+
+print("\n=== Modul interactiv ===")
+
+# CV de la utilizator
+nume_input = input("Introdu numele tau: ")
+email_input = input("Introdu adresa de email: ")
+exp_input = input("Adauga experiente (separate prin virgula): ").split(",")
+
+cv_user = CV(nume_input, email_input, [e.strip() for e in exp_input if e.strip()])
+
+print("\n--- CV-ul introdus ---")
+cv_user.afiseaza_cv()
+
+# Proiect de la utilizator
+titlu_input = input("\nTitlul unui proiect: ")
+descriere_input = input("Descrierea proiectului: ")
+link_input = input("Link GitHub (optional): ")
+
+proiect_user = Proiect(titlu_input, descriere_input, link_input)
+
+print("\n--- Proiectul introdus ---")
+proiect_user.afiseaza_proiect()
+
+# Mesaj de contact
+print("\nFormular de contact:")
+nume_msg = input("Nume expeditor: ")
+email_msg = input("Email expeditor: ")
+mesaj_msg = input("Mesaj: ")
+
+trimite_mesaj(nume_msg, email_msg, mesaj_msg)
+
+print("\n=== Sfarsit ===\n")
+
