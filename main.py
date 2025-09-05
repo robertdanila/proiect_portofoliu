@@ -183,8 +183,9 @@ cv_user.afiseaza_cv()
 titlu_input = input("\nTitlul unui proiect: ")
 descriere_input = input("Descrierea proiectului: ")
 link_input = input("Link GitHub (optional): ")
+tehnologie = input("Ce tehnologie folosesti: ")
 
-proiect_user = Proiect(titlu_input, descriere_input, link_input)
+proiect_user = ProiectDetaliat(titlu_input, descriere_input, link_input, tehnologie)
 
 print("\n--- Proiectul introdus ---")
 proiect_user.afiseaza_proiect()
