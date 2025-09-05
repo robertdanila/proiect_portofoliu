@@ -9,34 +9,34 @@ from contact import trimite_mesaj
 # Cream o variabila 'cv' de tipul clasei CV
 cv = CV(
     "Robert Danila",
-    "robert.danila@email.com",
-    ["IT Support - 2 ani", "Junior Python Dev - 1 an"]
+    "robert.danila@dummyemail.com",
+    ["Tech Support - 3 ani", "Junior Python Developer - 1 an"]
 )
 
 cv.afiseaza_cv()
 
 # === Tipuri de date primitive (str, list, int, float, bool) ===
 # str -> nume/email (deja folosite mai sus)
-varsta = 30               # int
-rating_portofoliu = 4.8   # float
-disponibil = True         # bool
+varsta = 31               # int
+rating_portofoliu = 4.5   # float
+disponibil = False         # bool
 
 print(f"\nProfil: varsta={varsta} (int), rating={rating_portofoliu} (float), disponibil={disponibil} (bool)")
 
 # === Structuri de date ===
 
 # list (indexata, ordonata, modificabila, permite duplicate)
-experiente = ["IT Support - 2 ani", "Junior Python Dev - 1 an"]
+experiente = ["Tech Support - 2 ani", "Junior Python Developer - 1 an"]
 
 # tuple (indexata, ordonata, nemodificabila, permite duplicate)
-coordonate = (45.76, 21.23)
+coordonate = (30.23, 28.99)
 
 # set (neindexat, neordonat, modificabil, fara duplicate)
-tehnologii = {"Python", "Flask", "SQLite"}
+tehnologii = {"Python", "Django", "PostgreSQL"}
 
 # dict (indexat prin cheie, ordonat, modificabil, cheile unice)
 proiect_info = {
-    "titlu": "Site Portofoliu",
+    "titlu": "Aplicatie Portofoliu",
     "limbaj": "Python",
     "an": 2025
 }
@@ -49,44 +49,46 @@ print("Dictionar proiect:", proiect_info)
 
 
 if disponibil and rating_portofoliu >= 4.5:
-    print("Esti disponibil si ai un rating foarte bun.")
+    print("Poti fi recomandat pentru proiecte premium.")
 elif disponibil:
-    print("Esti disponibil pentru proiecte.")
+    print("Esti disponibil, dar ratingul e prea mic pentru proiecte premium.")
 else:
-    print("Momentan esti indisponibil.")
+    print("Nu esti disponibil momentan.")
 
-if varsta >= 18:
-    print("Esti major, poti incheia colaborari.")
+if varsta >= 21:
+    print("Ai voie sa participi la toate proiectele internationale.")
+elif varsta >= 18:
+    print("Ai voie sa participi doar la proiecte locale.")
 else:
-    print("Esti minor.")
+    print("Nu poti participa la proiecte din cauza varstei.")
 
 # === if / elif / else ===
 if len(cv.experienta) == 0:
-    print("Nu ai inca experienta profesionala.")
-elif len(cv.experienta) == 1:
-    print("Ai un job anterior.")
+    print("Portofoliul tau este gol.")
+elif len(cv.experienta) <= 2:
+    print("Ai experienta de inceput.")
 else:
-    print("Ai experienta profesionala solida.")
+    print("Ai experienta variata in mai multe domenii.")
 
 # === for + continue ===
-print("\nExperienta avansata (excludem pozitiile 'Junior'):")
+print("\nExperiente non-IT (excludem cele din IT):")
 for job in cv.experienta:
-    if "Junior" in job:
+    if "IT" in job:
         continue
-    print(f"- {job}")
+    print("-", job)
 
 # === while + break ===
-print("\nCautare primul job 'Junior' (while + break):")
+print("\nCautare primul job in domeniul IT (while + break):")
 i = 0
 gasit = False
 while i < len(cv.experienta):
-    if "Junior" in cv.experienta[i]:
-        print(f"Gasit: {cv.experienta[i]}")
+    if "IT" in cv.experienta[i]:
+        print("Gasit:", cv.experienta[i])
         gasit = True
         break
     i += 1
 if not gasit:
-    print("Nu exista job 'Junior' in lista.")
+    print("Nu exista job in IT in lista.")
 
 print("\n---\n")
 
@@ -112,7 +114,7 @@ print("\n---\n")
 trimite_mesaj(
     nume="Andrei",
     email="andrei@email.com",
-    mesaj="Salut! Interesant proiectul tau!"
+    mesaj="Buna! Am o sugestie pentru imbunatatirea aplicatiei."
 )
 
 print("\n=== Exemple dummy pentru ceilalti 3 piloni OOP ===")
